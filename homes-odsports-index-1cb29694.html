@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>od体育 · 稳定入口与页面说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f9fafb;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #1e293b;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .page {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        /* 标题层 */
+        .hero {
+            text-align: left;
+            padding: 2.8rem 0 1.5rem 0;
+            border-bottom: 1px solid #e9edf2;
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: #0f172a;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero .sub {
+            font-size: 1rem;
+            color: #64748b;
+            margin-top: 0.2rem;
+            font-weight: 400;
+        }
+
+        /* 信息卡片通用设计 */
+        .card-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+            margin: 2.4rem 0 2.2rem 0;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.8rem 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.04);
+            border: 1px solid #f1f4f9;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04), 0 2px 6px rgba(0, 0, 0, 0.02);
+        }
+
+        .card h2 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #0f172a;
+            margin-bottom: 0.8rem;
+            letter-spacing: -0.01em;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card h2 .badge {
+            display: inline-block;
+            background: #eef2f8;
+            color: #334155;
+            font-size: 0.7rem;
+            font-weight: 500;
+            padding: 0.15rem 0.6rem;
+            border-radius: 20px;
+            letter-spacing: 0.3px;
+        }
+
+        .card p {
+            color: #334155;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0.6rem 0 0 0;
+        }
+
+        .card ul li {
+            position: relative;
+            padding-left: 1.2rem;
+            margin-bottom: 0.4rem;
+            font-size: 0.92rem;
+            color: #1e293b;
+        }
+
+        .card ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: #94a3b8;
+        }
+
+        /* 行内链接风格 */
+        .content-link {
+            color: #2563eb;
+            text-decoration: none;
+            border-bottom: 1px solid #bfdbfe;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .content-link:hover {
+            color: #1d4ed8;
+            border-bottom-color: #2563eb;
+        }
+
+        /* 段落区（不卡片化，纯文本段落） */
+        .passage {
+            margin: 2rem 0 1.8rem 0;
+            padding: 0.2rem 0;
+        }
+
+        .passage p {
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            color: #1e293b;
+        }
+
+        .passage p.quiet {
+            color: #64748b;
+            font-size: 0.85rem;
+        }
+
+        .faq-mini {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+            margin: 2rem 0 1.8rem 0;
+        }
+
+        .faq-mini h3 {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #0f172a;
+            margin-bottom: 0.6rem;
+        }
+
+        .faq-mini .qa {
+            margin-bottom: 0.7rem;
+        }
+
+        .faq-mini .qa strong {
+            font-weight: 500;
+            color: #1e293b;
+            display: block;
+            margin-bottom: 0.1rem;
+            font-size: 0.9rem;
+        }
+
+        .faq-mini .qa span {
+            color: #475569;
+            font-size: 0.88rem;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e9edf2;
+            margin: 1.6rem 0;
+        }
+
+        .footer-note {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            text-align: left;
+            padding: 1.2rem 0 0.4rem;
+            border-top: 1px solid #e9edf2;
+        }
+
+        /* 极简窄宽 */
+        @media (max-width: 560px) {
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .card {
+                padding: 1.4rem 1.2rem;
+            }
+            .faq-mini {
+                padding: 1.2rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- hero 主视觉 -->
+        <div class="hero">
+            <h1>od体育 · 稳定入口</h1>
+            <div class="sub">信息卡片式说明 · 用途·人群·自然指引</div>
+        </div>
+
+        <!-- 卡片区域：用途卡片 + 人群卡片 -->
+        <div class="card-grid">
+            <div class="card">
+                <h2>
+                    用途场景
+                    <span class="badge">常见方向</span>
+                </h2>
+                <p>从日常资讯浏览到专项内容查阅，<a href="https://homes-odsports.com" class="content-link">od体育</a> 提供了可依赖的访问界面。</p>
+                <ul>
+                    <li>移动端与桌面端均可顺畅使用，页面结构保持统一。</li>
+                    <li>无需额外配置，通过浏览器即可进入主内容区。</li>
+                    <li>页面基于常规 Web 标准构建，减少不必要的跳转或插件依赖。</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>
+                    适合人群
+                    <span class="badge">参考范围</span>
+                </h2>
+                <p>任何希望获得稳定线上入口、且对信息呈现方式有基础要求的用户。</p>
+                <ul>
+                    <li>习惯通过固定地址访问内容的日常使用者。</li>
+                    <li>注重页面加载速度与简洁布局的浏览者。</li>
+                    <li>需要快速定位核心信息，而非被大量装饰元素干扰的访问者。</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 自然链接段落 -->
+        <div class="passage">
+            <p>如果你正在寻找一个可以直接使用的起始页面，<a href="https://homes-odsports.com" class="content-link">od体育</a> 保持了较为克制的界面风格。页面主要围绕信息展示与导航设计，没有过度复杂的动效或弹层，适合作为日常参考地址。</p>
+            <p>从打开页面到阅读内容，整个过程不依赖第三方服务或脚本运行。页面本身仅承载基础说明与链接，不包含任何自动跳转或外部资源加载。这种结构对访问环境的要求较低，无论是固定网络还是移动流量都能较快响应。</p>
+            <p>另外，该入口的布局在窄屏与宽屏下均做了适配，卡片与文字会自动调整间距与尺寸，避免出现内容溢出或阅读困难的情况。对于需要快速确认页面性质的用户，这种一致性可以减少反复适应的时间。</p>
+        </div>
+
+        <!-- FAQ 摘要 -->
+        <div class="faq-mini">
+            <h3>常见问题摘要</h3>
+            <div class="qa">
+                <strong>这个页面提供哪些信息？</strong>
+                <span>概述了主要用途、适合人群以及基本的访问说明。</span>
+            </div>
+            <div class="qa">
+                <strong>如何确认当前访问的是稳定版本？</strong>
+                <span>该入口长期指向固定地址，页面内容经过结构化整理，无临时性跳转。</span>
+            </div>
+            <div class="qa">
+                <strong>是否有额外的软件要求？</strong>
+                <span>不需要。使用现代浏览器打开即可，无需安装客户端或注册账户。</span>
+            </div>
+        </div>
+
+        <!-- 结束段落 -->
+        <div class="passage">
+            <p class="quiet">上述内容基于当前页面结构整理而成，不包含对未来功能或服务的承诺。如果对具体展示方式有疑问，可以直接通过页面内的链接了解更完整的上下文。</p>
+        </div>
+
+        <!-- 自然的链接再次出现（非重复句子） -->
+        <hr>
+        <p style="font-size:0.9rem; color:#475569; margin-bottom:0.2rem;">
+            如果你希望直接查看主站内容，可以通过 <a href="https://homes-odsports.com" class="content-link">od体育</a> 访问。本页面仅为说明页，不代替主站功能。
+        </p>
+
+        <div class="footer-note">
+            od体育 · 信息卡片式说明页 · 极简留白
+        </div>
+    </div>
+</body>
+</html>
